@@ -1,0 +1,7 @@
+{
+    "rust-analyzer.linkedProjects": [
+        ".\\exercises\\ownership-borrowing\\Cargo.toml",
+        ".\\exercises\\ownership-borrowing\\Cargo.toml"
+    ],
+    "rust-analyzer.showUnlinkedFileNotification": false
+}
