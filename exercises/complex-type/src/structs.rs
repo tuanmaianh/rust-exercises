@@ -102,7 +102,7 @@ fn exercise4() {
         ..u1
     };
 
-    println!("user: {:#?}", u1.first);
+    println!("user: {:#?}", u1);
 
 }
 
