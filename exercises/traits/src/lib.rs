@@ -78,12 +78,12 @@ impl Foo for String {
 }
 
 // IMPLEMENT below with generics and parameters
-fn static_dispatch<T:std::fmt::Display>(x:T) {
-    println!("static_dispatch: {}", x);
+fn static_dispatch<T:Foo>(x:&T) {
+    println!("static_dispatch: {}", x.method());
 }
 
 // Implement below with trait objects and parameters
-fn dynamic_dispatch<T:Foo>(x:&T) {
+fn dynamic_dispatch(x: Box<dyn Foo>) {
     println!("dynamic_dispatch: {}", x.method());
 }
 
@@ -183,8 +183,8 @@ mod tests {
         let x = 5u8;
         let y = "Hello".to_string();
     
-        static_dispatch(x);
-        dynamic_dispatch(&y); 
+        static_dispatch(&x);
+        dynamic_dispatch(Box::new(y)); 
     }
 
     #[test]
